@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>我的个人主页</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav" aria-label="主要导航">
+        <a class="brand" href="index.html">我的网站</a>
+        <div class="nav-links">
+          <a href="#weather">今日天气</a>
+          <a href="#journal">学习日志</a>
+          <a href="#interests">兴趣</a>
+          <a href="#works">作品</a>
+          <a href="game.html">小游戏</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">安全的个人主页练习</p>
+          <h1 id="hero-title">你好，我是小小编程学习者</h1>
+          <p class="hero-text">
+            这里是我的个人主页。我正在学习 Python、网页和 API，
+            先用演示天气数据练习，再一步一步接入真正的天气服务。
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#weather">查看天气卡片</a>
+            <a class="button secondary" href="game.html">玩猜数字</a>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-label="学习桌插画">
+          <div class="desk-scene">
+            <div class="window-shape"></div>
+            <div class="screen">
+              <span class="code-line short"></span>
+              <span class="code-line"></span>
+              <span class="code-line tiny"></span>
+            </div>
+            <div class="book one"></div>
+            <div class="book two"></div>
+            <div class="pencil"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section weather-section" id="weather" aria-labelledby="weather-title">
+        <div class="section-heading">
+          <p class="eyebrow">Demo Weather</p>
+          <h2 id="weather-title">今日天气</h2>
+          <p>先用演示数据学习“网页向数据函数提问”的过程。</p>
+        </div>
+
+        <div class="weather-layout">
+          <form class="weather-controls" aria-label="选择城市">
+            <label for="province-select">选择省份</label>
+            <select id="province-select" name="province"></select>
+            <label for="city-select">选择城市</label>
+            <select id="city-select" name="city">
+              <option value="上海" selected>上海</option>
+            </select>
+          </form>
+
+          <article class="weather-card" aria-live="polite">
+            <div>
+              <p class="weather-label">城市</p>
+              <h3 id="weather-city">上海</h3>
+            </div>
+            <div class="weather-main">
+              <p id="weather-temp">26°C</p>
+              <span id="weather-status">多云</span>
+            </div>
+            <dl class="weather-details">
+              <div>
+                <dt>风速</dt>
+                <dd id="weather-wind">12 km/h</dd>
+              </div>
+              <div>
+                <dt>适合做</dt>
+                <dd id="weather-tip">整理作品集</dd>
+              </div>
+            </dl>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="interests" aria-labelledby="interests-title">
+        <div class="section-heading">
+          <p class="eyebrow">About Me</p>
+          <h2 id="interests-title">我的兴趣</h2>
+        </div>
+        <div class="card-grid">
+          <article class="info-card">
+            <h3>编程</h3>
+            <p>我正在学习 Python，想知道网站和 API 是怎样工作的。</p>
+          </article>
+          <article class="info-card">
+            <h3>阅读</h3>
+            <p>读书可以发现很多新想法，也能帮我写出更好的介绍。</p>
+          </article>
+          <article class="info-card">
+            <h3>创作</h3>
+            <p>画画、手工、作文都可以放进作品区，慢慢更新。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section works-section" id="works" aria-labelledby="works-title">
+        <div class="section-heading">
+          <p class="eyebrow">My Works</p>
+          <h2 id="works-title">我的作品</h2>
+        </div>
+        <div class="work-list">
+          <article class="work-item">
+            <span>01</span>
+            <div>
+              <h3>第一篇小作文</h3>
+              <p>以后可以把自己的作文标题和简介放在这里。</p>
+            </div>
+          </article>
+          <article class="work-item">
+            <span>02</span>
+            <div>
+              <h3>一幅画</h3>
+              <p>这里可以换成自己的画画作品或手工作品。</p>
+            </div>
+          </article>
+          <article class="work-item">
+            <span>03</span>
+            <div>
+              <h3>Python 小练习</h3>
+              <p>比如猜数字、计算器、天气 API 学习笔记。</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section journal-section" id="journal" aria-labelledby="journal-title">
+        <div class="section-heading">
+          <p class="eyebrow">Study Journal</p>
+          <h2 id="journal-title">学习日志</h2>
+          <p>每天写一点学习心得，访客可以点赞和评论。内容会保存在这个浏览器里。</p>
+        </div>
+
+        <div class="journal-layout">
+          <form class="journal-form" id="journal-form">
+            <label for="journal-title-input">今天学了什么</label>
+            <input
+              id="journal-title-input"
+              name="title"
+              type="text"
+              maxlength="40"
+              placeholder="例如：我学会了 API 是什么"
+              required
+            >
+
+            <label for="journal-content-input">学习心得</label>
+            <textarea
+              id="journal-content-input"
+              name="content"
+              rows="6"
+              maxlength="400"
+              placeholder="写下今天遇到的问题、学会的知识、明天想继续练习什么。"
+              required
+            ></textarea>
+
+            <button class="button primary" type="submit">发布日志</button>
+            <p class="form-hint" id="journal-form-hint" aria-live="polite">
+              不要写真实姓名、学校、电话或住址。
+            </p>
+          </form>
+
+          <div class="journal-feed" id="journal-feed" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <section class="section goal-section" aria-labelledby="goal-title">
+        <div>
+          <p class="eyebrow">Today</p>
+          <h2 id="goal-title">今日小目标</h2>
+          <p id="encouragement">今天学会一个新知识点，再把它讲给别人听。</p>
+        </div>
+        <button class="button primary" id="encouragement-button" type="button">
+          换一句鼓励
+        </button>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>这个网站不放真实姓名、学校、住址和电话，学习编程也要保护自己。</p>
+    </footer>
+
+    <script src="weather.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
