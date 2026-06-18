@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>猜数字小游戏</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav" aria-label="主要导航">
+        <a class="brand" href="index.html">我的网站</a>
+        <div class="nav-links">
+          <a href="index.html#weather">今日天气</a>
+          <a href="index.html#interests">兴趣</a>
+          <a href="index.html#works">作品</a>
+          <a href="game.html">小游戏</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="game-main">
+      <section class="hero game-hero" aria-labelledby="game-title">
+        <div class="hero-copy">
+          <p class="eyebrow">Python Idea</p>
+          <h1 id="game-title">猜数字小游戏</h1>
+          <p class="hero-text">
+            我心里有一个 1 到 20 的数字。你输入一个数字，我会告诉你猜大了、
+            猜小了，还是猜对了。
+          </p>
+        </div>
+      </section>
+
+      <section class="game-panel" aria-labelledby="game-panel-title">
+        <h2 id="game-panel-title">开始猜吧</h2>
+        <form class="game-form" id="guess-form">
+          <label for="guess-input">
+            输入 1 到 20
+            <input id="guess-input" name="guess" type="number" min="1" max="20" required>
+          </label>
+          <button class="button primary" type="submit">提交</button>
+        </form>
+        <p class="game-message" id="game-message" aria-live="polite">请输入一个数字。</p>
+        <div class="game-actions">
+          <button class="button secondary" id="restart-button" type="button">重新开始</button>
+          <p class="tries" id="tries-count">已猜 0 次</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>这个小游戏也可以以后用 Python 重新写一遍。</p>
+    </footer>
+
+    <script src="game.js"></script>
+  </body>
+</html>
